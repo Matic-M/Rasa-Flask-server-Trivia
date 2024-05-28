@@ -50,7 +50,7 @@ actions:
 
 responses:
   utter_greet:
-  - text: "Hey! BoredBot here. How are you doing today?"
+  - text: "Hey! TriviaBot here. How are you doing today?"
 
   utter_did_that_help:
   - text: "Did that help you?"
