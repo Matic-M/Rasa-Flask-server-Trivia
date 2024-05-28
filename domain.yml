@@ -1,0 +1,245 @@
+version: "3.1"
+
+# intents define a list of intents that the assistant is able to understand
+# intents come from nlu.md file
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - mood_bored
+  - quote
+  - activity
+  - thanks
+  - questions_number
+  - questions_difficulty
+
+entities:
+  - nr
+  - diff
+
+slots:
+  typ:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nr
+  participants:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: diff
+
+actions:
+- utter_greet
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_goodbye_better
+- utter_iamabot
+- utter_comforting
+- utter_quote
+- utter_trivia
+- utter_trivia_diff
+- utter_trivia_nr
+- action_trivia
+
+responses:
+  utter_greet:
+  - text: "Hey! BoredBot here. How are you doing today?"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "Was that useful for you?"
+  - text: "Did that provide the assistance you needed?"
+  - text: "Was that helpful in any way?"
+  - text: "Did that ease your mind a bit?"
+  - text: "Did that offer some solace?"
+  - text: "Did that provide some relief?"
+  - text: "Was that supportive for you?"
+  - text: "Did that bring you any sense of peace?"
+  - text: "Did that offer some encouragement?"
+
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "Yay! That's amazing!"
+  - text: "I'm so happy to hear that!"
+  - text: "That's awesome! I'm beaming with joy for you!"
+  - text: "Woo-hoo! That's cause for celebration!"
+  - text: "That's brilliant! It put a big smile on my face!"
+  - text: "Hooray! That's absolutely delightful!"
+  - text: "Oh, that's fantastic! It's like music to my ears!"
+  - text: "How exciting! I'm over the moon for you!"
+  - text: "That's fabulous news! It's like a ray of sunshine!"
+  - text: "Oh, that's wonderful! It made my day!"
+  - text: "That's fantastic! I'm so happy I could dance!"
+  - text: "That's amazing! It's like a dream come true!"
+  - text: "That's splendid news! It's like fireworks of happiness!"
+  - text: "Oh, that's superb! It's like a breath of fresh air!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: Farewell!
+  - text: See you later!
+  - text: Take care!
+  - text: Until we meet again!
+  - text: Bye for now!
+  - text: Catch you later!
+  - text: Have a great day!
+  - text: So long!
+  - text: Until next time!
+  - text: Adios!
+  - text: Fare thee well!
+  - text: Take it easy!
+  - text: Peace out!
+  - text: Toodle-oo!
+  - text: Sayonara!
+  - text: Bye-bye!
+  - text: Cheerio!
+  - text: Ta-ta!
+  - text: See you soon!
+  - text: Ciao!
+
+  utter_goodbye_better:
+  - text: "I hope you will be back better and stronger."
+  - text: "Wishing you a speedy recovery."
+  - text: "Feel better soon!"
+  - text: Sending lots of love and hugs your way.
+  - text: You're in my thoughts.
+  - text: Take extra good care of yourself.
+  - text: I miss having you around.
+  - text: You'll be feeling healthy and strong again soon!
+  - text: Praying for an easy recovery.
+  - text: You’ll be feeling healthy and strong again soon!
+  - text: Praying for an easy recovery.
+  - text: You can call me whenever you need anything.
+  - text: I can't wait to see you again!
+  - text: I hope you’re feeling a little bit better each day.
+  - text: Glad to hear you’re on the mend!
+  - text: Hang in there!
+  - text: Thinking of you. Let me know if you're up for a visitor.
+  - text: Looking forward to our next hug.
+  - text: Take it one day at a time, and I know you'll be feeling better soon!
+  - text: Feel better, friend! Sending you all my love.
+  - text: I hope you're being gentle with yourself as you recover.
+  - text: You'll be back and better in no time!
+  - text: Get well soon so we can plan our next adventure!
+  - text: Glad to hear you’re on the mend.
+  - text: Even superheroes need to rest! You’ll be back in action soon.
+  - text: Hang in there, better days are coming.
+  - text: May you be blessed with good health and a quick recovery.
+  - text: I'm hoping you get better soon so you can be back where you belong. I miss you more than you know.
+  - text: Sending get-well sunshine your way because you always brighten my days.
+  - text: You're one of the strongest people I know, and I have no doubt you'll overcome this.
+  - text: I will be here to care for you and nurse you back to health as long as you need it. I love you.
+  - text: You are not alone. I'm here for you every step of the way.
+  - text: You're in all of our thoughts and prayers as you continue to heal.
+  - text: I've always admired your courage and ability to handle anything life throws your way. I know you'll get through this, too.
+  - text: I hope you feel all the love surrounding you right now. We can't wait to see you smiling again.
+  - text: Gift yourself patience and time while you work to recover. I hope each day brings more comfort and strength.
+  - text: May the hands of the Lord rest upon you as you recover.
+  - text: I am so sorry to hear about your diagnosis. I’m sending lots of love and positivity your way as you start treatment.
+  - text: Even though we don’t always get to know the reasons for our struggles, just know there is a bigger plan in place. He will guide you through this difficult time.
+  - text: When I close my eyes and pray each night, I pray that God heals you.
+  - text: A warrior like you makes recovery look simple. Get well soon.
+  - text: Best wishes that you will soon be doing all the things you love again!
+  - text: I may not have a medical degree, but I do have friendship’s healing touch. Get well soon!
+  - text: Thank you for teaching me how to face challenges with grace and beauty. Hoping you'll feel better in no time.
+  - text: When you look in the mirror, I hope you see someone strong, capable, smart, and loved. That’s how I see you. I know you'll get through this.
+  - text: I know this has been hard for you, but I'm so glad you're on the way to making a full recovery. Let me know if you need anything.
+  - text: If cuddles were medicine, you'd already be better. But I'm here for you regardless!
+  - text: Looks like you forgot to eat an apple a day! Here's to a quick recovery.
+  - text: Feel better soon so I don’t get sick of missing you!
+  - text: Make room in your hospital bed, because I’m coming over to watch TV and eat snacks and I’m not sitting in those terrible plastic chairs!
+  - text: "Healing takes courage, and we all have courage, even if we have to dig a little to find it — Tori Amos" 
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  - text: "I am a robot. I can't complete CAPTCHA."
+
+  utter_comforting:
+  - text: "I am so sorry to hear that. It's okay to feel this way sometimes."
+  - text: "If you need to cry, go ahead!"
+  - text: "I can only imagine how difficult this is for you. Your feelings are completely valid."
+  - text: "I'm here for you, whatever you need. You don't have to face this alone."
+  - text: "You're stronger than you realize. You've gotten through tough times before, and you'll get through this too."
+  - text: "You are loved and valued. Don't ever doubt that."
+  - text: "It's okay to feel overwhelmed right now. Take all the time you need to process your emotions."
+  - text: "This may seem insurmountable right now, but it won't always feel this way. Things will get better."
+  - text: "You've overcome challenges in the past, and you'll overcome this one too. I believe in your strength."
+  - text: "I understand why you're feeling this way. Anyone in your shoes would feel the same."
+  - text: "You are safe here. You can open up and share whatever you're feeling without fear of judgment."
+  - text: "I'm so sorry you're going through this. It must be incredibly difficult for you."
+  - text: "I can't imagine how hard this must be for you. My heart goes out to you."
+  - text: "I'm deeply saddened to hear about what you're going through. Please know that I'm here for you."
+  - text: "I wish I could take away your pain. Please know that you're not alone, and I'm here to support you in any way I can."
+  - text: "I'm truly sorry for the pain you're experiencing. If there's anything I can do to help ease your burden, please don't hesitate to ask."
+  - text: "My heart breaks for you during this difficult time. Please know that I'm thinking of you and sending you all my love."
+  - text: "I wish there were words to make this easier for you. Just know that I'm here to provide comfort and support in any way you need."
+  - text: "I'm holding you close in my thoughts as you navigate through this sadness. Lean on me whenever you need to."
+  - text: "I'm so sorry for your pain. Please know that I care about you deeply, and I'm here to offer my support and comfort however I can."
+
+  utter_joke_ask:
+  - text: "Would you like to hear a joke?"
+
+  utter_joke:
+  - text: "Why don't scientists trust atoms? Because they make up everything!"
+  - text: "I told my wife she was drawing her eyebrows too high. She looked surprised."
+  - text: "Why did the scarecrow win an award? Because he was outstanding in his field!"
+  - text: "Why did the scarecrow win an award? Because he was outstanding in his field!"
+  - text: "Why did the bicycle fall over? Because it was two-tired!"
+  - text: "Why don't skeletons fight each other? They don't have the guts."
+  - text: "I'm reading a book on anti-gravity. It's impossible to put down!"
+  - text: "What did the ocean say to the beach? Nothing, it just waved."
+  - text: "What do you get when you cross a snowman and a vampire? Frostbite."
+  - text: "Why couldn't the leopard play hide and seek? Because he was always spotted!"
+  - text: "Why did the golfer bring two pairs of pants? In case he got a hole in one!"
+  - text: "What did one hat say to the other? You stay here, I'll go on ahead."
+  - text: "Why did the tomato turn red? Because it saw the salad dressing!"
+  - text: "Why don't scientists trust stairs? Because they're always up to something!"
+  - text: "What did one wall say to the other wall? I'll meet you at the corner!"
+  - text: "Why did the bicycle fall over? Because it was two-tired!"
+  - text: "Why did the chicken join a band? Because it had the drumsticks!"
+  - text: "How do you organize a space party? You planet!"
+  - text: "What do you get when you cross a snowman and a vampire? Frostbite!"
+  - text: "Why was the math book sad? Because it had too many problems."
+  - text: "What did one ocean say to the other ocean? Nothing, they just waved."
+  - text: "Why don't skeletons fight each other? They don't have the guts."
+  - text: "What do you call a bear with no teeth? A gummy bear!"
+  - text: "What did the grape say when it got stepped on? Nothing, it just let out a little wine."
+
+  utter_quote:
+  - text: "Life is like riding a bicycle. To keep your balance, you must keep moving."
+  - text: "A rose by any other name would smell as sweet."
+  - text: "Ask, and it shall be given you; seek, and you shall find."
+  - text: "Genius is one percent inspiration and ninety-nine percent perspiration."
+  - text: "I think therefore I am."
+  - text: "If you want something done right, do it yourself."
+  - text: "I'll be back."
+  - text: "I'm gonna make him an offer he can't refuse."
+  - text: "Knowledge is power."
+  - text: "Life is like a box of chocolates. You never know what you’re gonna get."
+  - text: "Life is like riding a bicycle. To keep your balance, you must keep moving."
+  - text: "To be or not to be, that is the question."
+  - text: "What doesn't kill us makes us stronger."
+  - text: "You can fool all of the people some of the time, and some of the people all of the time, but you can't fool all of the people all of the time."
+  - text: "You must be the change you wish to see in the world."
+
+  utter_trivia:
+  - text: "Would you like to play trivia?"
+
+  utter_trivia_diff:
+  - text: "How difficult do you want questions to be? You can choose between easy, medium or hard."
+
+
+  utter_trivia_nr:
+  - text: "So, how many questions do you want to be asked (1-50)?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
