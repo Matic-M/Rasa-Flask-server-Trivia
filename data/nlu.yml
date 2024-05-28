@@ -197,6 +197,7 @@ nlu:
     - of course not
     - nay
     - nah
+    - false
 
 
 - intent: mood_great
@@ -364,7 +365,7 @@ nlu:
     - [49](nr)
     - [50](nr)
 
-- intent: questions_diffciulty
+- intent: questions_difficulty
   examples: |
     - [easy](diff)
     - [medium](diff)
