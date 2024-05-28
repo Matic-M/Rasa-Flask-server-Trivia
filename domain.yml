@@ -23,12 +23,12 @@ entities:
   - diff
 
 slots:
-  typ:
+  nr:
     type: text
     mappings:
       - type: from_entity
         entity: nr
-  participants:
+  diff:
     type: text
     mappings:
       - type: from_entity
