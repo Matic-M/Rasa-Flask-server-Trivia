@@ -1,0 +1,391 @@
+version: "3.1"
+
+# NLU model training examples
+# intents are user goals, examples represent those intents
+# NLU training data labels the entities that assistant should extract from examples
+# NLU model extracts meaning from text input. Training on this data allows the model to make predictions about the intents and entities in new user messages.
+# test with > rasa shell nlu
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi there
+    - hey you
+    - hey mate
+    - howdy
+    - how's you?
+    - how do you do?
+    - how are you?
+    - what's up?
+    - yo, what's up?
+    - where've you been?
+    - hey man
+    - hey dude
+    - oi
+    - mate
+    - cheers
+    - you right
+    - how ya going?
+    - how are ya?
+    - what's going on?
+    - morning!
+    - hello. it's cold out!
+    - how are ya?
+    - what's happening_
+    - hey what's up?
+    - hey, how's it going_
+    - good to see you again
+    - nice to see you again
+    - i'm glad to see you
+    - i'm happy to see you
+    - i'm pleased to see you
+    - what's shaking
+    - how're you going?
+    - it's an honor to meet you
+
+
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - farewell
+    - so long
+    - see you
+    - take care
+    - adios
+    - adieu
+    - cheerio
+    - bon voyage
+    - good day
+    - peace out
+    - aloha
+    - later
+    - catch you later
+    - happy landing
+    - take it easy
+    - departing
+    - parting
+    - have a good one
+    - talk to you later
+    - gotta get going
+    - AVE
+    - see you soon
+    - don't be a stranger
+    - take it easy
+    - later
+    - have a good one
+    - hasta la vista!
+    - peace
+    - have a nice day
+    - i look forward tou out nex meeting
+    - it was a pleasure seeing you
+    - it was a pleasure talking to you
+    - it was a pleasure speaking to you
+    - take care
+    - speak to you then
+    - i'll see you then
+    - gotta go
+    - good seeing you
+    - this was fun!
+    - bye for now
+    - keep in touch
+    - safe travels
+    - gotta bounce
+    - i'm outta here
+    - catch you later
+    - i gotta hit the road!
+    - take it sleazy!
+    - bye, Felicia!
+    - nice chatting with you
+    - talk to you soon
+    - i'll call you later
+    - i gotta go, bye!
+    - chat soon
+    - BRB
+    - BBL
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - very well
+    - by all means
+    - sure
+    - certainly
+    - absolutely
+    - agree
+    - yah
+    - yep
+    - yeah
+    - okey-doke
+    - surely
+    - roger
+    - aye
+    - indeed
+    - affirmative
+    - okay
+    - amen
+    - true
+    - yea
+    - all right
+    - exactly
+    - good enough
+    - granted
+    - positive
+    - sure thing
+    - surely
+    - without doubt
+    - OK
+    - alright
+    - yas
+
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - hardly
+    - no way
+    - not really
+    - no way
+    - not at all
+    - absolutely not
+    - in no manner
+    - under no circumstances
+    - not under any condition
+    - most certainly not
+    - ne'er
+    - not ever
+    - not at any time
+    - to no extent
+    - surely not
+    - negative
+    - certainly not
+    - definitely not
+    - of course not
+    - nay
+    - nah
+
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - good
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - cheerful
+    - delighted
+    - calm
+    - fine
+    - i am fine
+    - i'm fine
+    - happy
+    - hopeful
+    - over the moon
+    - makes your day
+    - I feel awesome
+    - i'm great
+    - i'm fine
+    - i'm fine thanks for asking
+
+
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - can't take it anymore
+    - have had enough
+    - had it up to here
+    - feel blue
+    - not really good
+    - not good
+    - feel terrible
+    - i'm down
+    - feel broken down
+    - i am down
+
+- intent: mood_bored
+  examples: |
+    - bored to death
+    - bored
+    - boredom
+    - unineteresting
+    - uninterested
+    - tired
+    - bore
+    - how boring
+    - how dull
+    - bored to tears
+    - i don't find this interesting
+    - i find this uninteresting
+    - dull
+    - exhausted
+    - worn out
+    - tired to the bone
+    - i'm about to drop
+    - i'm about to collapse
+    - i can hardly keep my eyes on
+    - it bores me
+    - depression
+    - i'm depressed
+    - tiresome
+    - bored out of mind
+    - boring me to death
+    - bored to pieces
+    - bored out of my skull
+    - not interesting
+    - fed up
+    - done it all
+    - unexcited
+    - not excited
+    - sick of
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you real?
+
+- intent: quote
+  examples: |
+    - tell me a quote
+    - motivate me
+    - inspire me
+    - positive vibe
+    - encourage me
+
+- intent: questions_number
+  examples: |
+    - [1](nr)
+    - [2](nr)
+    - [3](nr)
+    - [4](nr)
+    - [5](nr)
+    - [6](nr)
+    - [7](nr)
+    - [8](nr)
+    - [9](nr)
+    - [10](nr)
+    - [11](nr)
+    - [12](nr)
+    - [13](nr)
+    - [14](nr)
+    - [15](nr)
+    - [16](nr)
+    - [17](nr)
+    - [18](nr)
+    - [19](nr)
+    - [20](nr)
+    - [21](nr)
+    - [22](nr)
+    - [23](nr)
+    - [24](nr)
+    - [26](nr)
+    - [27](nr)
+    - [28](nr)
+    - [29](nr)
+    - [30](nr)
+    - [31](nr)
+    - [32](nr)
+    - [33](nr)
+    - [34](nr)
+    - [35](nr)
+    - [36](nr)
+    - [37](nr)
+    - [38](nr)
+    - [39](nr)
+    - [40](nr)
+    - [41](nr)
+    - [42](nr)
+    - [43](nr)
+    - [44](nr)
+    - [45](nr)
+    - [46](nr)
+    - [47](nr)
+    - [48](nr)
+    - [49](nr)
+    - [50](nr)
+
+- intent: questions_diffciulty
+  examples: |
+    - [easy](diff)
+    - [medium](diff)
+    - [hard](diff)
+
+- intent: thanks
+  examples: |
+    - "Thank you so much!"
+    - "Thanks a million!"
+    - "Many thanks!"
+    - "Thank you very much!"
+    - "I really appreciate it!"
+    - "Thanks a bunch!"
+    - "I'm so grateful!"
+    - "Thank you for everything!"
+    - "You're too kind!"
+    - "I can't thank you enough!"
+    - "Much obliged!"
+    - "Thanks a ton!"
+    - "I'm deeply thankful!"
+    - "Thank you for your kindness!"
+    - "I'm thankful for your help!"
+    - "I'm truly grateful for your assistance!"
+    - "I'm so thankful for your support!"
