@@ -151,7 +151,6 @@ nlu:
     - affirmative
     - okay
     - amen
-    - true
     - yea
     - all right
     - exactly
@@ -197,7 +196,6 @@ nlu:
     - of course not
     - nay
     - nah
-    - false
 
 
 - intent: mood_great
@@ -371,6 +369,11 @@ nlu:
     - [medium](diff)
     - [hard](diff)
 
+- intent: questions_answer
+  examples: |
+    - [true](answer)
+    - [false](answer)
+
 - intent: thanks
   examples: |
     - "Thank you so much!"
@@ -390,3 +393,11 @@ nlu:
     - "I'm thankful for your help!"
     - "I'm truly grateful for your assistance!"
     - "I'm so thankful for your support!"
+
+- intent: play_trivia
+  examples: |
+    - "i want to play trivia"
+    - "trivia"
+    - "questions"
+    - "quiz"
+    - " i want to do quiz"

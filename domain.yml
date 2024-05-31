@@ -17,10 +17,14 @@ intents:
   - thanks
   - questions_number
   - questions_difficulty
+  - questions_answer
+  - play_trivia
 
 entities:
   - nr
   - diff
+  - answer
+  - correct_answer
 
 slots:
   nr:
@@ -33,6 +37,18 @@ slots:
     mappings:
       - type: from_entity
         entity: diff
+
+  answer:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: answer
+
+  correct_answer:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: correct_answer
 
 actions:
 - utter_greet

@@ -17,3 +17,19 @@ rules:
   steps:
     - intent: greet
     - action: utter_greet
+
+- rule: continue after diff
+  steps:
+    - intent: questions_difficulty
+    - action: utter_trivia_nr
+
+- rule: action
+  steps:
+    - intent: questions_number
+    - action: action_trivia
+
+- rule: trivia
+  steps:
+#     - action: action_trivia
+    - intent: questions_answer
+    - action: action_trivia

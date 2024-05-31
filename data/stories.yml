@@ -1,0 +1,102 @@
+version: "3.1"
+
+# stories containing story data
+# examples of end-to-end conversations
+
+stories:
+  - story: quiz happy path accepted
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_great
+    - action: utter_happy
+    - action: utter_trivia
+    - intent: affirm
+    - action: utter_trivia_diff
+    - intent: questions_difficulty
+    - action: utter_trivia_nr
+    - intent: questions_number
+    - action: action_trivia
+    - intent: questions_answer
+    - action: action_trivia
+
+  - story: trivia happy path denied joke
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_great
+    - action: utter_happy
+    - action: utter_trivia
+    - intent: deny
+    - action: utter_joke_ask
+    - intent: affirm
+    - action: utter_joke
+    - action: utter_goodbye
+
+
+  - story: trivia happy path denied joke denied
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_great
+    - action: utter_happy
+    - action: utter_trivia
+    - intent: deny
+    - action: utter_joke_ask
+    - intent: deny
+    - action: utter_goodbye
+
+
+  - story: trivia sad path trivia denied
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_unhappy
+    - action: utter_comforting
+    - action: utter_joke_ask
+    - intent: affirm
+    - action: utter_joke
+    - action: utter_trivia
+    - intent: deny
+    - action: utter_goodbye_better
+
+  - story: trivia sad path accepted changed
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_unhappy
+    - action: utter_comforting
+    - action: utter_joke_ask
+    - intent: affirm
+    - action: utter_joke
+    - action: utter_trivia
+    - intent: affirm
+    - action: utter_trivia_diff
+    - intent: questions_difficulty
+    - action: utter_trivia_nr
+    - intent: questions_number
+    - action: action_trivia
+    - intent: questions_answer
+    - action: action_trivia
+
+
+
+
+
+  - story: activity sad path deny affirm
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_unhappy
+    - action: utter_comforting
+    - action: utter_joke_ask
+    - intent: deny
+    - action: utter_trivia
+    - intent: affirm
+    - action: utter_trivia_diff
+    - intent: questions_difficulty
+    - action: utter_trivia_nr
+    - intent: questions_number
+    - action: action_trivia
+    - intent: questions_answer
+    - action: action_trivia

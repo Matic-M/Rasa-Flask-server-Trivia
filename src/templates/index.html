@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trivia Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        
+
+        .container {
+            border-style: none;
+            color: black;
+            
+        }
+        .container-history {
+            border-style: groove;
+            color: black;
+            height: 1000px;
+        }
+
+        .container-send_msg {
+            border-style: groove;
+            color: black;
+            
+        }
+        .btn btn-dark {
+            
+        }
+
+        upper {
+            border-style: none;
+        }
+    </style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    function send(){
+        let text=document.getElementById("message").value;
+
+        fetch('http://164.8.215.49:5000/msg',{
+            method:'POST',
+            headers:{
+                Accept:'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ "message": text, "sender": "user" }),
+            cache: 'default'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Server not responding');
+            }
+            return response.json();
+        })
+        .then(resp => {
+            
+            console.log(resp);
+            document.getElementById("message").value="";
+
+            const history = document.getElementById("history");
+            const node = document.createElement("div");
+            node.innerText = text;
+            history.appendChild(node);
+            for(let i=0; i<resp.length ; i++){
+                const node = document.createElement("div");
+                node.innerText=resp[i].text;
+                history.appendChild(node);
+
+            }   
+            
+            
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+</script>
+
+</head>
+
+
+<div class="container" id="upper" style="text-align: center;">
+    <span>&#128512&#128513&#128514&#128515&#128516&#128517&#128518&#128519&#128520&#128521&#128522&#128523&#128524&#128525&#128526&#128527&#128528&#128529&#128530&#128531&#128532&#128533&#128534&#128535&#128536&#128537&#128538&#128539&#128540&#128541;</span>
+    <h4>TriviaBot</h4>
+</div>
+<div class="container" id="history">
+    
+</div>
+
+    
+<div class="container">
+<div class="input-group mb-3">
+    <button class="btn btn-outline-secondary" onclick="send()" type="button" id="button-addon1">Send</button>
+    <input type="text"  class="form-control" placeholder="Hi! :)" id="message">
+</div>
+</div>
+
+
+</html>
