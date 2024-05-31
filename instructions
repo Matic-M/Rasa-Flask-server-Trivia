@@ -1,0 +1,9 @@
+rasa run actions
+
+rasa train
+
+rasa run --enable-api --auth-token secret
+
+export FLASK_env=development
+export FLASK_APP=server.py
+flask run --host=0.0.0.0
